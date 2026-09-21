@@ -1,0 +1,29 @@
+NORTHPORT CHEMICAL STORAGE FACILITY
+2025 ENVIRONMENTAL SITE ASSESSMENT
+
+Project ID: ENV-2025-067
+Client: Northport Chemicals Pty Ltd
+
+SITE SUMMARY
+
+The facility operated as a chemical storage and distribution
+warehouse between 1994 and 2021.
+
+LABORATORY RESULTS
+
+Groundwater sample MW-02:
+- Trichloroethylene: 0.091 mg/L
+- Benzene: 0.004 mg/L
+- Lead: Not detected
+
+Soil sample BH-08:
+- Trichloroethylene: 3.2 mg/kg
+- Total Petroleum Hydrocarbons: 640 mg/kg
+
+ASSESSMENT FINDINGS
+
+Elevated trichloroethylene concentrations were detected in
+groundwater and soil.
+
+Historical solvent storage activities were identified as the
+likely source of contamination.

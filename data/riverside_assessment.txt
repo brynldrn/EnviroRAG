@@ -1,0 +1,44 @@
+RIVERSIDE INDUSTRIAL SITE
+2025 ENVIRONMENTAL SITE ASSESSMENT
+
+Project ID: ENV-2025-041
+Client: Riverside Manufacturing Pty Ltd
+Assessment Date: 14 March 2025
+
+SITE SUMMARY
+
+The Riverside Industrial Site operated as a metal fabrication
+facility between 1987 and 2019.
+
+Soil and groundwater samples were collected from twelve monitoring
+locations across the property.
+
+LABORATORY RESULTS
+
+Groundwater sample MW-03:
+- Lead: 0.084 mg/L
+- Benzene: 0.012 mg/L
+- Arsenic: 0.006 mg/L
+
+Groundwater sample MW-07:
+- Lead: 0.031 mg/L
+- Benzene: Not detected
+- Arsenic: 0.004 mg/L
+
+Soil sample BH-04:
+- Lead: 420 mg/kg
+- Total Petroleum Hydrocarbons: 1,850 mg/kg
+- Arsenic: 14 mg/kg
+
+ASSESSMENT FINDINGS
+
+Elevated lead concentrations were identified in groundwater at
+monitoring location MW-03.
+
+Elevated lead and petroleum hydrocarbon concentrations were identified
+in soil at BH-04.
+
+The investigation concluded that historical metal fabrication
+activities were the likely source of the lead contamination.
+
+Further groundwater delineation around MW-03 was recommended.
