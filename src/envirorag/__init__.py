@@ -1,3 +1,4 @@
+from httpx._models import Response
 import httpx
 from pathlib import Path
 from envirorag.retrieval import retrieve_documents
@@ -7,50 +8,22 @@ OLLAMA_URL = "http://localhost:11434/api/chat"
 MODEL = "qwen3:4b"
 
 def main() -> None:
-    documents = retrieve_documents(
+    documents: list[str] = retrieve_documents(
         "Where did we find TCE?",
-        top_k=1,
+        top_k=3,
     )
-
-    print("\nRETRIEVED:")
-    print(documents[0][:300])
+    
+    for i, document in enumerate(documents, start=1):
+        print(f"\n--- RESULT {i} ---")
+        print(document)
     
     question = "What contamination was found at Northport?"
-    documents = retrieve_documents(question)
-    context = "\n\n---\n\n".join(documents)
+    documents: list[str] = retrieve_documents(question)
+    context: str = "\n\n---\n\n".join(documents)
 
-    query = embed("Where did we find TCE?")
+    return
 
-    candidate_a = embed(
-        "Elevated trichloroethylene concentrations were detected "
-        "in groundwater and soil."
-    )
-
-    candidate_b = embed(
-        "The facility operated as a fuel storage depot."
-    )
-
-    candidate_c = embed(
-        "Lead contamination was identified near the metal "
-        "fabrication area."
-    )
-
-    print(
-        "Trichloroethylene:",
-        cosine_similarity(query, candidate_a),
-    )
-
-    print(
-        "Fuel storage:",
-        cosine_similarity(query, candidate_b),
-    )
-
-    print(
-        "Lead contamination:",
-        cosine_similarity(query, candidate_c),
-    )
-
-    response = httpx.post(
+    response: Response = httpx.post(
         OLLAMA_URL,
         json={
             "model": MODEL,

@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from envirorag.embeddings import embed, cosine_similarity
+from envirorag.chunking import chunk_text
 
 
 DATA_DIR = Path("data")
@@ -11,23 +12,24 @@ def retrieve_documents(
     top_k: int = 1,
 ) -> list[str]:
 
-    query_vector = embed(query)
+    query_vector: list[float] = embed(query)
 
     results: list[tuple[float, str]] = []
 
     for path in DATA_DIR.glob("*.txt"):
-        content = path.read_text()
-        document_vector = embed(content)
+        content: str = path.read_text()
+        chunks: list[str] = chunk_text(content)
 
-        score = cosine_similarity(query_vector, document_vector)
+        for chunk in chunks:
+            chunk_vector: list[float] = embed(chunk)
 
-        print(f"{path.name}: {score}")
+            score: float = cosine_similarity(query_vector, chunk_vector)
 
-        results.append((score, content))
+            results.append((score, chunk))
         
     results.sort(
         key=lambda result: result[0],
         reverse=True,
     )
 
-    return [content for score, content in results[:top_k]]
+    return [chunk for score, chunk in results[:top_k]]
