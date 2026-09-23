@@ -2,7 +2,7 @@ from httpx._models import Response
 import httpx
 from pathlib import Path
 from envirorag.retrieval import retrieve_documents
-from envirorag.embeddings import embed, cosine_similarity
+# from envirorag.embeddings import embed, cosine_similarity
 
 OLLAMA_URL = "http://localhost:11434/api/chat"
 MODEL = "qwen3:4b"
@@ -12,7 +12,7 @@ def main() -> None:
         "Where did we find TCE?",
         top_k=3,
     )
-    
+
     for i, document in enumerate(documents, start=1):
         print(f"\n--- RESULT {i} ---")
         print(document)

@@ -1,3 +1,4 @@
+from envirorag.models import DocumentChunk
 from pathlib import Path
 
 from envirorag.embeddings import embed, cosine_similarity
@@ -10,18 +11,18 @@ DATA_DIR = Path("data")
 def retrieve_documents(
     query: str,
     top_k: int = 1,
-) -> list[str]:
+) -> list[DocumentChunk]:
 
     query_vector: list[float] = embed(query)
 
-    results: list[tuple[float, str]] = []
+    results: list[tuple[float, DocumentChunk]] = []
 
     for path in DATA_DIR.glob("*.txt"):
         content: str = path.read_text()
-        chunks: list[str] = chunk_text(content)
+        chunks: list[DocumentChunk] = chunk_text(content, path.name)
 
         for chunk in chunks:
-            chunk_vector: list[float] = embed(chunk)
+            chunk_vector: list[float] = embed(chunk.text)
 
             score: float = cosine_similarity(query_vector, chunk_vector)
 
